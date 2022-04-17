@@ -1,0 +1,1 @@
+const soma = function(num1, nun2) {return num1 + num2}
