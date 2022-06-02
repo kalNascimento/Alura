@@ -1,10 +1,9 @@
-import chalk from 'chalk';
 import fs from 'fs';
 
 function extrairLinks(texto) {
     const regex = /\[([^\]]*)\]\((https?:\/\/[^$#\s].[^\s]*)\)/gm;
     const arrayResult = [];
-    const notLinks = chalk.red('não há links')
+    const notLinks = 'não há links'
     let temp;
     while((temp = regex.exec(texto)) !== null){
         arrayResult.push({ [temp[1]]: temp[2]});
@@ -13,7 +12,7 @@ function extrairLinks(texto) {
 }
 
 function errorFile(erro) {
-    throw new Error(chalk.red(erro.code, "Não há arquivo no caminho"))
+    throw new Error("não há caminho do arquivo")
 }
 
 async function pegaArquivo(pathFile) {
